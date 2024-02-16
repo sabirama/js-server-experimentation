@@ -1,0 +1,13 @@
+{
+    "type": "module",
+    "dependencies": {
+        "googleapis": "^133.0.0",
+        "mysql": "^2.18.1"
+    },
+    "main":"./server/main.js",
+    "scripts": {
+        "dev": "node ./server/main.js",
+        "preview": "",
+        "build": ""
+    }
+}

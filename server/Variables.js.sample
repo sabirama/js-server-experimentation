@@ -1,0 +1,19 @@
+export const google = {
+    ClientId: "Your Google Client Id",
+    ClientSecret: "Your Google Client Secret",
+    RedirectUri: "https://developers.google.com/oauthplayground",
+    RefreshToken: "Your Google Playground Refresh Token",
+    WebContentBaseUrl: "https://drive.google.com/thumbnail?id="
+}
+
+export const db = {
+    dbHost: "",
+    dbUser: "user",
+    dbPassword: "",
+    dbDatabase: ""
+}
+
+export default [
+    google,
+    db
+]
