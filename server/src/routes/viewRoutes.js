@@ -1,4 +1,6 @@
 import home from "../views/home.js";
+import about from "../views/about.js";
+import contact from "../views/contact.js";
 import style from "../style/style.js";
 import index from "../views/components/index.js";
 
@@ -11,13 +13,13 @@ const viewRoutes = [
     },
     {
       name: "about",
-      body: "about",
+      body: about,
       path: "/about",
       contentType: "text/html",
     },
     {
       name: "contact",
-      body: "contact",
+      body: contact,
       path: "/contact",
       contentType: "text/html",
     },

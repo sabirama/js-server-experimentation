@@ -1,9 +1,9 @@
 const style = `
 body{
-    min-height: 700px;
+    min-height: 98svh;
     display:flex;
     flex-direction:column;
-    justify-content:center;
+    justify-content:space-between;
 }
 h1 {
     color: red;

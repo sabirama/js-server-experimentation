@@ -6,7 +6,7 @@ export const google = {
     WebContentBaseUrl: "https://drive.google.com/thumbnail?id="
 }
 
-export const db = {
+export const dbConfig = {
     dbHost: "",
     dbUser: "user",
     dbPassword: "",
@@ -15,5 +15,5 @@ export const db = {
 
 export default [
     google,
-    db
+    dbConfig
 ]
