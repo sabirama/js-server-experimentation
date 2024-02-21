@@ -1,4 +1,4 @@
-export const google = {
+export const googleApis = {
   ClientId: "172334547265-e9dps654m6mvj27fnijqr37ano0fjaag.apps.googleusercontent.com",
   ClientSecret: "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",
   RedirectUri: "https://developers.google.com/oauthplayground",
@@ -15,6 +15,6 @@ export const dbConfig = {
 }
 
 export default {
-  google,
+  googleApis,
   dbConfig
 }

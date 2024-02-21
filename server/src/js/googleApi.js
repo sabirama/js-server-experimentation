@@ -1,12 +1,12 @@
 import { google } from "googleapis";
 import { createReadStream } from 'fs';
-import {google} from "../../Variables.js";
+import { googleApis } from "../../../Variables.js";
 
-const CLIENT_ID = google.ClientId;
-const CLIENT_SECRET = google.ClientSecret;
-const REDIRECT_URI = google.RedirectUri;
+const CLIENT_ID = googleApis.ClientId;
+const CLIENT_SECRET = googleApis.ClientSecret;
+const REDIRECT_URI = googleApis.RedirectUri;
 
-const REFRESH_TOKEN = google.RefreshToken;
+const REFRESH_TOKEN = googleApis.RefreshToken;
 
 const auth2 = new google.auth.OAuth2(
     CLIENT_ID,

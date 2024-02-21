@@ -1,5 +1,5 @@
 import mysql from "mysql";
-import { dbConfig } from "../../Variables.js";
+import { dbConfig } from "../../../Variables.js";
 
 const db = mysql.createConnection({
   host: dbConfig.dbHost,
@@ -19,6 +19,15 @@ const connect = db.connect((err) => {
 });
 
 export const createTable = (tableName, columnDefinitions, callback) => {
+  /**
+  tablename(string);
+  columnDefinition(array with objects) sample: [
+    {name: "column_name1", datatype: "column_type", constraints: "column_constraints"},
+    {name: "column_name2", datatype: "column_type", constraints: "column_constraints"},
+  ];
+  callback(function);
+ */
+
   connect;
 
   const columns = [
@@ -50,6 +59,10 @@ export const createTable = (tableName, columnDefinitions, callback) => {
 };
 
 export const dbSelectTable = (tableName, callback) => {
+  /**
+  tablename(string);
+  callback(function);
+ */
   connect;
 
   db.query(`SELECT * FROM ${tableName}`, (error, results, fields) => {
@@ -64,23 +77,35 @@ export const dbSelectTable = (tableName, callback) => {
 };
 
 export const dbInsert = (tableName, keys, values, callback) => {
+  /**
+  tablename(string);
+  keys(string) sample: (key1, key2, key3);
+  values(string) sample (value1, value2, value3);
+  callback(function);
+ */
   connect;
 
-  db.query(`INSERT INTO ${tableName} ${keys} VALUES ${values} `, (error, results, fields) => {
-    if (error) {
-      console.error("Error inserting into table: " + error);
-      callback(error, null, null);
-      return;
+  db.query(
+    `INSERT INTO ${tableName} ${keys} VALUES ${values} `,
+    (error, results, fields) => {
+      if (error) {
+        console.error("Error inserting into table: " + error);
+        callback(error, null, null);
+        return;
+      }
+      console.log("Inserted row successfully.");
+      callback(null, results, fields);
     }
-    console.log("Inserted row successfully.");
-    callback(null, results, fields);
-  });
+  );
   db.end();
 };
 
 export const dbDeleteTable = (tableName, callback) => {
+  /*
+  tablename(string);
+  callback(function);
+  */
   connect;
-
   db.query(`DROP TABLE ${tableName}`, (error, results, fields) => {
     if (error) {
       console.error("Error deleting table: " + error);
@@ -93,8 +118,11 @@ export const dbDeleteTable = (tableName, callback) => {
   db.end();
 };
 
-// Function to drop all tables (This is not a standard SQL operation and needs to be handled carefully)
+// Function to drop all tables (This is not a standard SQL operation and needs to be handled carefully);
 export const dropAllTables = (callback) => {
+  /*
+  callback(function);
+  */
   connect;
   console.log("This operation is not supported.");
   callback("This operation is not supported.", null, null);
@@ -106,5 +134,5 @@ export default {
   dbSelectTable,
   dbInsert,
   dbDeleteTable,
-  dropAllTables
+  dropAllTables,
 };
